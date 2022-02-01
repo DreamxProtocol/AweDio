@@ -16,13 +16,26 @@ body{
 #cat{
     position: relative;
     left: 8%;
-    top: 3.2%;
+    top: 2%;
     z-index: 2;
+    transition-property: transform;
+    transition-duration: 1s;
 }
+
+.bobLeft{
+    transform: translate(-25px, 20px);
+}
+.bobRight{
+    transform: translate(35px, 20px);
+}
+.bobReturn{
+    transform: translate(0, 0);
+}
+
 
 .neck{
     border: solid red 1px;
-    height: 5%;
+    height: 3.5%;
     margin-left: 17%;
     z-index: -1;
     position: relative;
@@ -45,7 +58,7 @@ body{
 .rightShoulder{
     transform: rotate(40deg);  
     position: relative;
-    top: -.5%;
+    top: 1%;
     margin-left: 19.2%;
 }
 
@@ -65,7 +78,7 @@ body{
 .rightFore{
     transform: rotate(-65deg);
     position: relative;
-    top: 3%;
+    top: 5%;
     margin-left: 20.5%;
 }
 

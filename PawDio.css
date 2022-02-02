@@ -11,6 +11,9 @@ body{
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    background-color: black;
+    transition-property: background-color;
+    transition-duration: 1.5s;
 }
 
 #cat{

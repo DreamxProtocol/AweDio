@@ -5,9 +5,12 @@ const tomRototom = document.querySelector("#tomRototom");
 const snareModular = document.querySelector("#snareModular");
 const kickElectro = document.querySelector("#kickElectro");
 const cat = document.querySelector("#cat"); 
+const body = document.querySelector("body");
 let bobbingInterval = "";
+let partyInterval = "";
 
 const padControllers =  {
+    81: {pressed: false},
     76: {pressed: false},
     65: {pressed: false},
     83: {pressed: false},
@@ -32,81 +35,112 @@ function bobHead() {
 
     cat.classList.add("bobLeft");
     setTimeout(bobReturn, 500);
-    setTimeout(bobRightDelay, 1000)
+    setTimeout(bobRightDelay, 1000);
     setTimeout(bobReturn, 1500);
 }
 
-function tomRotoTomSample () {
-    if(padControllers[65].pressed == true){
-        tomRototom.play();
+function backgroundColorChange (){
+
+    function randomNumFunc(min,max){
+        let randomNumber = Math.floor(Math.random() * (max-min) + min);
+        return randomNumber;
     }
+    
+    function randomColor(){
+        let newColor = "rgb("+randomNumFunc(255,0)+", "+randomNumFunc(255,0)+", "+randomNumFunc(255,0)+")";
+        body.style.backgroundColor = newColor;
+    }
+
+    if(padControllers[81].pressed == true && padControllers[76].pressed == true){
+        clearInterval(partyInterval);
+        partyInterval = setInterval(randomColor, 500);
+    } else if (padControllers[81].pressed == true){
+        clearInterval(partyInterval);
+    }
+}
+
+function tomRotoTomSample () {
+    
     if(padControllers[65].pressed == true && padControllers[76].pressed == true){
         tomRototom.setAttribute("loop", "")
         tomRototom.play();
+        clearInterval(bobbingInterval);
         bobbingInterval = setInterval(bobHead, 2100);
-    } else if (padControllers[65].pressed == true){
+    } else if(padControllers[65].pressed == true){
+        tomRototom.play();
         tomRototom.removeAttribute("loop"); 
         clearInterval(bobbingInterval);
+        bobHead();
     }
 }
 
 function snareModularSample (){
-    if (padControllers[83].pressed == true){
-        snareModular.play();
-    }
     if (padControllers[83].pressed == true && padControllers[76].pressed == true){
         snareModular.setAttribute("loop", "")
         snareModular.play();
+        clearInterval(bobbingInterval);
+        bobbingInterval = setInterval(bobHead, 2100);
     } else if(padControllers[83].pressed == true){
+        snareModular.play();
         snareModular.removeAttribute("loop")
+        clearInterval(bobbingInterval);
+        bobHead();
     }
 }
 
 function clapAnalogSample () {
-    if(padControllers[68].pressed == true){
-        clapAnalog.play(); 
-    }
     if(padControllers[68].pressed == true && padControllers[76].pressed == true){
         clapAnalog.setAttribute("loop", "");
         clapAnalog.play(); 
+        clearInterval(bobbingInterval);
+        bobbingInterval = setInterval(bobHead, 2100);
     } else if (padControllers[68].pressed == true) {
+        clapAnalog.play(); 
         clapAnalog.removeAttribute("loop");
+        clearInterval(bobbingInterval);
+        bobHead();
     }
 }
 
 function tomAnalogSample(){
-    if(padControllers[66].pressed == true){
-        tomAnalog.play();
-    }
     if(padControllers[66].pressed == true && padControllers[76].pressed == true){
         tomAnalog.setAttribute("loop", "")
         tomAnalog.play();
+        clearInterval(bobbingInterval);
+        bobbingInterval = setInterval(bobHead, 2100);
     } else if (padControllers[66].pressed == true){
+        tomAnalog.play();
         tomAnalog.removeAttribute("loop");
+        clearInterval(bobbingInterval);
+        bobHead();
     }
 }
 
 function kickElectroSample(){
-    if (padControllers[78].pressed == true){
-        kickElectro.play();
-    }
     if (padControllers[78].pressed == true && padControllers[76].pressed == true){
         kickElectro.setAttribute("loop", "")
         kickElectro.play();
+        clearInterval(bobbingInterval);
+        bobbingInterval = setInterval(bobHead, 2100);
     } else if (padControllers[78].pressed == true){
+        kickElectro.play();
         kickElectro.removeAttribute("loop")
+        clearInterval(bobbingInterval);
+        bobHead();
     }
 }
 
 function kickZapperSample(){
-    if (padControllers[77].pressed == true){
-        kickZapper.play();
-    }
     if (padControllers[77].pressed == true && padControllers[76].pressed == true){
         kickZapper.setAttribute("loop", "")
         kickZapper.play();  
+        clearInterval(bobbingInterval);
+        bobbingInterval = setInterval(bobHead, 2100);
     } else if (padControllers[77].pressed == true){
+        kickZapper.play();
         kickZapper.removeAttribute("loop");
+        clearInterval(bobbingInterval);
+        bobHead();
     }
 }
 
@@ -125,6 +159,8 @@ document.addEventListener("keydown", (e) => {
         padControllers[e.keyCode].pressed = true;
     }
     playSamples(); 
+    backgroundColorChange();
+    
 })
 
 document.addEventListener("keyup", (e) => {

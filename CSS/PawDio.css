@@ -11,7 +11,7 @@ body{
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    background-color: black;
+    /* background-color: black; */
     transition-property: background-color;
     transition-duration: 1.5s;
 }
@@ -37,16 +37,16 @@ body{
 
 
 .neck{
-    border: solid red 1px;
+    border: solid pink 1px;
     height: 3.5%;
     margin-left: 17%;
-    z-index: -1;
+    z-index: 1;
     position: relative;
     top: 1%;
 }
 
 .arms{
-    border: solid red 1px;
+    border: solid pink 1px;
     width: 3%;
     z-index: 1;
 }
@@ -66,7 +66,7 @@ body{
 }
 
 .foreArms{
-    border: solid red 1px;
+    border: solid pink 1px;
     width: 2%;
     z-index: 1;
 }
@@ -74,28 +74,70 @@ body{
 .leftFore{
     transform: rotate(20deg);
     position: relative;
-    top: 6.5%;
-    margin-left: 14.5%;
+    top: 6.8%;
+    margin-left: 14%;
 }
 
 .rightFore{
     transform: rotate(-65deg);
     position: relative;
-    top: 5%;
-    margin-left: 20.5%;
+    top: 4.7%;
+    margin-left: 20.8%;
 }
 
 #controller{
-    border: solid green 1px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     margin-bottom: 1%;
-    padding-top: 2%;
+    padding: .5% 0;
     width: 60%;
     height: 80%;
-    background-color: blueviolet;
+    background-color: #584747;
+    box-shadow: 0 0 30px 20px black;
+    border-radius: .5%;
+}
+
+.instructions{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom: 1%;
+}
+
+.textKeys {
+    background-color: #eee;
+    border-radius: 3px;
+    border: 1px solid #b4b4b4;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .2), 0 2px 0 0 rgba(255, 255, 255, .7) inset;
+    color: #333;
+    display: inline-block;
+    /* font-size: .85em; */
+    font-weight: 700;
+    line-height: 1;
+    padding: 2px 4px;
+    /* white-space: nowrap; */
+   }
+
+span{
+    color: #25d1c1;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.keys{
+    font-size: 9rem;
+    height: 80%;
+}
+
+.keysPressed{
+    font-size: 8.5rem;
+}
+
+.loops, .stops{
+    display: flex;
+    flex-direction: column;
 }
 
 .leftSet, .rightSet{
@@ -106,14 +148,20 @@ body{
 }
 
 .pad{
-    border: solid orange 1px;
+    background-color: black;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%;
+    height: 95%;
     width: 25%;
+    border-radius: 5%;
 }
+
+/* .padPressed{
+    border-radius: 6%;
+    height: 93.5%;
+} */
 
 audio{
     width: 75%;

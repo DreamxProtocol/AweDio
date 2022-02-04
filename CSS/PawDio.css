@@ -11,7 +11,6 @@ body{
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    /* background-color: black; */
     transition-property: background-color;
     transition-duration: 1.5s;
 }
@@ -25,6 +24,7 @@ body{
     transition-duration: 1s;
 }
 
+/* these three used in JavaScript for moving the cat head */
 .bobLeft{
     transform: translate(-25px, 20px);
 }
@@ -34,7 +34,6 @@ body{
 .bobReturn{
     transform: translate(0, 0);
 }
-
 
 .neck{
     border: solid pink 1px;
@@ -85,6 +84,7 @@ body{
     margin-left: 20.8%;
 }
 
+/* the drum pad as a whole */
 #controller{
     display: flex;
     flex-direction: column;
@@ -99,6 +99,7 @@ body{
     border-radius: .5%;
 }
 
+/* container inside the controller, above the pads */
 .instructions{
     display: flex;
     width: 100%;
@@ -106,6 +107,7 @@ body{
     margin-bottom: 1%;
 }
 
+/* kbd inside the instructions  */
 .textKeys {
     background-color: #eee;
     border-radius: 3px;
@@ -113,26 +115,22 @@ body{
     box-shadow: 0 1px 1px rgba(0, 0, 0, .2), 0 2px 0 0 rgba(255, 255, 255, .7) inset;
     color: #333;
     display: inline-block;
-    /* font-size: .85em; */
     font-weight: 700;
     line-height: 1;
     padding: 2px 4px;
-    /* white-space: nowrap; */
    }
 
+/* text inside the instructions */
 span{
     color: #25d1c1;
     font-weight: bold;
     letter-spacing: 0.5px;
 }
 
+/* letters inside the pads */
 .keys{
     font-size: 9rem;
     height: 80%;
-}
-
-.keysPressed{
-    font-size: 8.5rem;
 }
 
 .loops, .stops{
@@ -140,13 +138,14 @@ span{
     flex-direction: column;
 }
 
-.leftSet, .rightSet{
+.topSet, .bottomSet{
     display: flex;
     width: 100%;
     height: 45%;
     justify-content: space-evenly;
 }
 
+/* the individual drum pads */
 .pad{
     background-color: black;
     display: flex;
@@ -157,11 +156,6 @@ span{
     width: 25%;
     border-radius: 5%;
 }
-
-/* .padPressed{
-    border-radius: 6%;
-    height: 93.5%;
-} */
 
 audio{
     width: 75%;

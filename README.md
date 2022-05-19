@@ -18,13 +18,13 @@
 ## Completed Pictures
   ![completed drum pad](./Rough%20draft%20and%20completed%20pics/PawDio2_final.png)
   
+## Video Presentation
+  https://youtu.be/3_0jvrF6KuA
+  
 ## Sources
   - Sounds: https://99sounds.org/drum-samples/
   
   - GIMP: https://www.gimp.org/
   
   - Inkscape: https://inkscape.org/
-  
-## Video Presentation
-  https://youtu.be/3_0jvrF6KuA
 

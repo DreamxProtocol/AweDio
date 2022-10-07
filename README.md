@@ -2,6 +2,9 @@
 
 ## Site
   https://marcelino-g.github.io/PawDio/
+ 
+## Video Presentation
+  https://youtu.be/zVqcEj0vDpk
   
 ## What
   PawDio is a "drum pad" that allows users to play sounds by pressing down on corresponding keys. It was made with a "party" environment in mind, inspiring its colorful and animated features.
@@ -17,9 +20,6 @@
   
 ## Completed Pictures
   ![completed drum pad](./Rough%20draft%20and%20completed%20pics/PawDio2_final.png)
-  
-## Video Presentation
-  https://youtu.be/3_0jvrF6KuA
   
 ## Sources
   - Sounds: https://99sounds.org/drum-samples/
